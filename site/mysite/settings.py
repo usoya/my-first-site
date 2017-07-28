@@ -25,7 +25,7 @@ SECRET_KEY = 'm@8_@)_-_h6wdzkrl*!tr$tij_zshrf5#^gd@k(#h658-o822h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["usoya.pythonanywhere.com"]
 
 
 # Application definition
