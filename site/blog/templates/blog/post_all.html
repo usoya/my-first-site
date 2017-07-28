@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<article>
+             <hgroup>
+                <h2>게시판</h2>
+		            <h3>자유로운 게시글을 올리시면 됩니다.</h3>
+            </hgroup>
+            <table class="table_list" summary="게시판" cellspacing="0">
+            <thead>
+            <tr>
+              <th scope="col">제목</th>
+              <th scope="col">작성자</th>
+              <th scope="col">작성일</th>
+            </tr>
+          </thead>
+          <tbody>
+           {% for post in posts %}
+           <tr>
+             <td class="title">
+               <a href='{{ post.get_absolute_url }}'>{{ post.title }} </a>
+             </td>
+             <td>{{post.description}}</td>
+             <td class="num"> {{ post.modify_date|date:"N d, Y" }}</td>
+           </tr>
+           {% endfor %}
+         </tbody>
+       </table>
+     </article>
+
+           <br/>
+
+           <div>
+             <span>
+               {% if page_obj.has_previous %}
+               <a href="?%page={{ page_obj.previous_page_number }}">PreviousPage</a>
+               {% endif %}
+
+               Page {{page_obj.number }} of {{ page_obj.paginator.num_pages }}
+
+               {% if page_obj.has_next %}
+               <a href="?page={{ page_obj.next_page_number }}">NextPage</a>
+               {% endif %}
+             </span>
+           </div>
+
+{% endblock %}

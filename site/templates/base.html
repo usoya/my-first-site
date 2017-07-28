@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <title>Quipu Layout</title>
+    <style>
+        header, section, footer, aside, nav, article, figure, figcaption{ dispaly: block;}
+	body{
+	color:#666666;
+        background-color: #f9f8f6;
+        background-position: center;
+        font-family: Georgia, Times, serif;
+        line-height: 1.4em;
+        margin: 0px;
+	}
+        .wrapper{
+            width: 940px;
+            margin: 20px auto 20px auto;
+            border: 2px solid #000000;
+            background-color: #ffffff;
+        }
+      header {
+        height: 160px;
+        background-color:#ffcccc;
+      }
+      h1{
+          color:#ffffff;
+          text-shadow:-1px -1px #111111;
+          font-size: 400%;
+          width: 940px;
+          height: 130px;
+          margin: 0px;
+      }
+      nav,footer{
+          clear: both;
+          color: #ffffff;
+          background-color:  #aeaca8;
+          height: 30px;
+      }
+      nav ul{
+          margin:0px;
+          padding: 5px 0px 5px 30px;
+      }
+      nav li{
+          display: inline;
+          margin-right:40px;
+      }
+      nav li a{
+          color: #ffffff;
+      }
+      nav li a:hover, nav li a.current{
+          color:#000000;
+      }
+      section.courses{
+          float: left;
+          width: 659px;
+          border-right: 1px solid #eeeeee;
+      }
+      article{
+          clear: both;
+          overflow:auto;
+          width:100%;
+      }
+      hgroup{
+          margin-top:40px;
+      }
+      figure{
+          float:left;
+          width:290px;
+          height:220px;
+          padding:5px;
+          margin:20px;
+          border:1px solid #eeeeee;
+      }
+      figcaption{
+          font-size:90%;
+          text-align: left;
+      }
+      aside{
+          width:230px;
+          float:left;
+          padding: 0px 0px 0px 20px;
+      }
+      aside section a{
+          display: block;
+          padding: 10px;
+          border-bottom: 1px solid #eeeeee;
+      }
+      aside section a:hover{
+          color: #985d6a;
+          background-color: #efefef;
+      }
+      a{
+          color: #de6581;
+          text-decoration: none;
+      }
+      h1,h2,h3{
+          font-weight: normal;
+      }
+      h2{
+          margin: 10px 0px 5px 0px;
+          padding: 0px;
+      }
+      h3{
+          margin: 0px 0px 10px 0px;
+          color:#de6581;
+
+      }
+      .table_list{
+        width: 100%;
+        font-size: 12px;
+      }
+      .table_list thead tr th {
+        height: 35px;
+        background: #494949;
+        color: #fff;
+        font-weight: bold;
+      }
+      .table_list tbody tr td {
+        line-height: 35px;
+        border-bottom:1px solid #c3c3c3;
+        text-align: center;
+      }
+      .table_list tbody tr td.num{
+        font-family: Tahoma;
+        font-size: 11px;
+        color: #737373;
+      }
+      .table_list tbody tr td.title{
+        text-align: left;
+      }
+      .table_list tbody tr td.title a{
+        display:block;
+        float:left;
+        text-decoration: none;
+        color: #191919;
+        max-width: 320px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .table_list tbody tr td.title a:hover{
+        text-decoration: underline;
+      }
+      aside h2{
+          padding: 30px 0px 10px 0px;
+          color: #de6581;
+      }
+      footer{
+          font-size:80%;
+          padding: 7px 0px 0px 20px;
+      }
+
+    </style>
+    <!--[ifit IE9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+          <h1><br/><br/><br/>QUIPU WEBSITE </h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}" class="current">홈</a></li>
+                <li><a href="" >공지사항</a></li>
+                <li><a href="" >활동</a></li>
+                <li><a href="{% url 'blog:index' %}" >게시판</a></li>
+                <li><a href="" >자료실</a></li>
+                <li><a href="{% url 'blog:post_archive' %}" >Archive</a></li>
+                <li><a href="" >Search</a></li>
+            </ul>
+        </nav>
+      </header>
+
+      <section class="courses">
+      {% block content %}
+      {% endblock %}
+      </section>
+	<aside>
+           <section class="school">
+	         <h2>학교 홈페이지</h2>
+		<a href="https://www.uos.ac.kr/main.do">서울시립대 메인사이트</a>
+		<a href="https://portal.uos.ac.kr/user/login.face">서울시립대 포털사이트</a>
+		<a href="http://cafe338.daum.net/_c21_/home?grpid=1k4k">서울시립대 광장</a>
+		<a href="http://uos.fbpage.kr/#/search">서울시립대 대나무숲</a>
+	</section>
+	<section class="contact">
+	         <h2>연락처</h2>
+		<p>회장 김종현<br/>
+		010-6478-9865 <br/><br/>
+		부회장 임동영<br/>
+		010-9169-7157</p>
+
+	</section>
+	</aside>
+	<footer>
+	모든 제작권은 ooo에게 있음
+	</footer>
+	</div><!-- .wrapper -->
+</body>
+</html>
