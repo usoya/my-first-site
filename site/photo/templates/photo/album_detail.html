@@ -1,0 +1,30 @@
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block extrastyle %}{% static "photo/photo.css" %}{% endblock %}
+{% block content %}
+<div style="padding:20px;">
+        <article>
+          <h2>자료실</h2>
+          <h3>사진을 게시하는 공간입니다.</h3>
+
+           <p style="display:inline" >{{ object.name }}</p>
+           &emsp;<small>{{ object.description }}</small>
+
+         <hr/>
+
+         <div class="album-detail" style="padding:15px;">
+           {% for photo in object.photo_set.all %}
+           <div class="album-detail-photo" style="float:left; margin-right:18px;">
+             <a href="{{ photo.get_absolute_url }}">
+               <img class="thumbnail" src="{{ photo.image.thumb_url }}"/>
+             </a>
+             <li>{{ photo.title }}</li>
+             <li>{{ photo.upload_date|date:"Y-m-d" }}</li>
+           </div>
+           {% endfor %}
+         </div>
+       </div>
+
+
+{% endblock %}

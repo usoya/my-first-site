@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<div style="padding:10px;">
         <article>
                 <h2>Post Archives for {{ month|date:"N, Y" }}</h2>
 
@@ -12,5 +13,5 @@
          </ul>
        </div>
         </article>
-
+</div>
 {% endblock %}

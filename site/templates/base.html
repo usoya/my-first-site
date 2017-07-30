@@ -8,9 +8,10 @@
 	color:#666666;
         background-color: #f9f8f6;
         background-position: center;
-        font-family: Georgia, Times, serif;
+        font-family: "Gill Sans", Arial, sans-serif;
         line-height: 1.4em;
         margin: 0px;
+        font-size: 15px;
 	}
         .wrapper{
             width: 940px;
@@ -90,7 +91,7 @@
           background-color: #efefef;
       }
       a{
-          color: #de6581;
+          color: #FF7E9D;
           text-decoration: none;
       }
       h1,h2,h3{
@@ -104,6 +105,9 @@
           margin: 0px 0px 10px 0px;
           color:#de6581;
 
+      }
+      hr{
+        color: #aeaca8;
       }
       .table_list{
         width: 100%;
@@ -158,14 +162,14 @@
   <body>
     <div class="wrapper">
       <header>
-          <h1><br/><br/><br/>QUIPU WEBSITE </h1>
+          <h1><br/><br/><br/><a href="{% url 'home' %}"> QUIPU WEBSITE </a></h1>
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}" class="current">홈</a></li>
                 <li><a href="" >공지사항</a></li>
                 <li><a href="" >활동</a></li>
                 <li><a href="{% url 'blog:index' %}" >게시판</a></li>
-                <li><a href="" >자료실</a></li>
+                <li><a href="{% url 'photo:index' %}" >자료실</a></li>
                 <li><a href="{% url 'blog:post_archive' %}" >Archive</a></li>
                 <li><a href="" >Search</a></li>
             </ul>

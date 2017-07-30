@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
+<div style="padding:10px;">
         <article>
            <h2>제목: {{object.title}}</h2>
 
@@ -19,4 +20,10 @@
            | <a href="{{ object.get_next_post.get_absolute_url}}" title="View next post"> {{ object.get_next_post }}--&raquo;</a>
            {% endif %}
          </p>
+         <br/>
+         <div>
+           {% load disqus_tags %}
+           {% disqus_show_comments %}
+         </div>
+       </div>
 {% endblock %}

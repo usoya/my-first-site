@@ -25,7 +25,7 @@ SECRET_KEY = 'm@8_@)_-_h6wdzkrl*!tr$tij_zshrf5#^gd@k(#h658-o822h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["usoya.pythonanywhere.com"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
+    'disqus',
+    'django.contrib.sites',
+    'photo.apps.PhotoConfig',
 ]
+
+DISQUS_WEBSITE_SHORTNAME = 'usoya-python-web'
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
